@@ -18,12 +18,10 @@ function ClozeCard(fullText, cloze) {
       for (x = 0; x < this.partialArray[0].length; x++) {
         if (this.clozeArray[0][i] === this.partialArray[0][x]) {
           this.partialArray[0][x] = "_____"; 
+          this.partial = this.partialArray[0].join(" ");
         }
       }
     }
-    //console.log(this.partialArray);
-    this.partial = this.partialArray.join(" ");
-    console.log(this.partial);
   };
 }
 
@@ -37,10 +35,10 @@ firstPresidentCloze.deleteClozeFromFullText();
 console.log(firstPresidentCloze.cloze); 
 
 // " ... was the first president of the United States.
-//console.log(firstPresidentCloze.partial);
+console.log(firstPresidentCloze.partial);
 
 // "George Washington was the first president of the United States.
-//console.log(firstPresidentCloze.fullText);
+console.log(firstPresidentCloze.fullText);
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
 var brokenCloze = new ClozeCard("This doesn't work", "oops");
